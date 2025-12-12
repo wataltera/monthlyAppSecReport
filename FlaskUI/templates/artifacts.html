@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Artifacts - Monthly Report Database{% endblock %}
+
+{% block content %}
+<h2>Artifacts</h2>
+
+<div class="actions">
+    <a href="{{ url_for('new_artifact') }}" class="btn btn-success">Add New Artifact</a>
+</div>
+
+<form method="GET" style="background: #f9f9f9; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+    <h3 style="margin-bottom: 1rem;">Filter Artifacts</h3>
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="business_unit">Business Unit (exact)</label>
+            <input type="text" id="business_unit" name="business_unit" 
+                   value="{{ filters.get('business_unit', '') }}"
+                   placeholder="Exact match">
+        </div>
+        
+        <div class="form-group">
+            <label for="altera_product">Altera Product (contains)</label>
+            <input type="text" id="altera_product" name="altera_product" 
+                   value="{{ filters.get('altera_product', '') }}"
+                   placeholder="Partial match">
+        </div>
+        
+        <div class="form-group">
+            <label for="rapid7_app">Rapid7 App (contains)</label>
+            <input type="text" id="rapid7_app" name="rapid7_app" 
+                   value="{{ filters.get('rapid7_app', '') }}"
+                   placeholder="Partial match">
+        </div>
+        
+        <div class="form-group">
+            <label for="checkmarx_product">Checkmarx Product (contains)</label>
+            <input type="text" id="checkmarx_product" name="checkmarx_product" 
+                   value="{{ filters.get('checkmarx_product', '') }}"
+                   placeholder="Partial match">
+        </div>
+        
+        <div class="form-group">
+            <label for="mend_product">Mend Product (contains)</label>
+            <input type="text" id="mend_product" name="mend_product" 
+                   value="{{ filters.get('mend_product', '') }}"
+                   placeholder="Partial match">
+        </div>
+        
+        <div class="form-group">
+            <label for="mend_project">Mend Project (contains)</label>
+            <input type="text" id="mend_project" name="mend_project" 
+                   value="{{ filters.get('mend_project', '') }}"
+                   placeholder="Partial match">
+        </div>
+    </div>
+    <div class="btn-group" style="margin-top: 0.5rem;">
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <a href="{{ url_for('artifacts') }}?clear=1" class="btn btn-secondary">Clear</a>
+        <a href="{{ url_for('export_artifacts') }}" class="btn btn-success">Export to Excel</a>
+    </div>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Business Unit</th>
+            <th>Altera Product</th>
+            <th>Rapid7 App</th>
+            <th>Checkmarx Product</th>
+            <th>Mend Product</th>
+            <th>Mend Project</th>
+            <th>Owner</th>
+            <th>Scans (SCA/SAST/DAST)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for artifact in artifacts %}
+        <tr>
+            <td>{{ artifact['ID'] }}</td>
+            <td>{{ artifact['BusinessUnit'] }}</td>
+            <td>{{ artifact['AlteraProduct'] or '-' }}</td>
+            <td>{{ artifact['Rapid7App'] or '-' }}</td>
+            <td>{{ artifact['CheckmarxProduct'] or '-' }}</td>
+            <td>{{ artifact['MendProduct'] or '-' }}</td>
+            <td>{{ artifact['MendProject'] or '-' }}</td>
+            <td>{{ artifact['Owner'] or '-' }}</td>
+            <td>{{ artifact['SCAScans'] }} / {{ artifact['SASTScans'] }} / {{ artifact['DASTScans'] }}</td>
+            <td>
+                <div class="btn-group">
+                    <a href="{{ url_for('artifact_scans', id=artifact['ID']) }}" class="btn btn-primary">Scans</a>
+                    <a href="{{ url_for('edit_artifact', id=artifact['ID']) }}" class="btn btn-primary">Edit</a>
+                    <form method="POST" action="{{ url_for('delete_artifact', id=artifact['ID']) }}" style="display: inline;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Mark this artifact as deleted?')">Delete</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if artifacts|length == 0 %}
+<p style="margin-top: 2rem; text-align: center; color: #666;">No artifacts found. <a href="{{ url_for('new_artifact') }}">Add one now</a>.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Scans - Monthly Report Database{% endblock %}
+
+{% block content %}
+<h2>Scans</h2>
+
+<div class="actions">
+    <a href="{{ url_for('new_scan') }}" class="btn btn-success">Add New Scan</a>
+    <a href="{{ url_for('export_scans') }}" class="btn btn-info">Export to Excel</a>
+</div>
+
+<form method="GET" style="background: #f9f9f9; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+    <h3 style="margin-bottom: 1rem;">Filter Scans</h3>
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="business_unit">Business Unit (exact)</label>
+            <input type="text" id="business_unit" name="business_unit" 
+                   value="{{ filters.get('business_unit', '') }}"
+                   placeholder="Exact match">
+        </div>
+        
+        <div class="form-group">
+            <label for="scan_tool">Scan Tool (contains)</label>
+            <input type="text" id="scan_tool" name="scan_tool" 
+                   value="{{ filters.get('scan_tool', '') }}"
+                   placeholder="Partial match">
+        </div>
+        
+        <div class="form-group">
+            <label for="scan_type">Scan Type (contains)</label>
+            <input type="text" id="scan_type" name="scan_type" 
+                   value="{{ filters.get('scan_type', '') }}"
+                   placeholder="Partial match">
+        </div>
+        
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="most_recent_only" name="most_recent_only" 
+                       value="1" {% if filters.get('most_recent_only') %}checked{% endif %}>
+                Most Recent Only
+            </label>
+        </div>
+    </div>
+    <div class="btn-group" style="margin-top: 0.5rem;">
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <a href="{{ url_for('scans') }}?clear=1" class="btn btn-secondary">Clear</a>
+    </div>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Business Unit</th>
+            <th>Artifact Info</th>
+            <th>Tool</th>
+            <th>Type</th>
+            <th>Date/Time</th>
+            <th>Critical</th>
+            <th>High</th>
+            <th>Medium</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for scan in scans %}
+        <tr>
+            <td>{{ scan['ID'] }}</td>
+            <td>{{ scan['BusinessUnit'] }}</td>
+            <td>
+                {% if scan['Rapid7App'] %}R7: {{ scan['Rapid7App'] }}{% endif %}
+                {% if scan['CheckmarxProduct'] %}CX: {{ scan['CheckmarxProduct'] }}{% endif %}
+                {% if scan['MendProduct'] %}Mend: {{ scan['MendProduct'] }}{% endif %}
+            </td>
+            <td>{{ scan['ScanTool'] }}</td>
+            <td>{{ scan['ScanType'] }}</td>
+            <td>{{ scan['ScanDateTime'] }}</td>
+            <td>{{ scan['Critical'] }}{% if scan['CriticalNP'] > 0 %} ({{ scan['CriticalNP'] }} NP){% endif %}</td>
+            <td>{{ scan['High'] }}{% if scan['HighNP'] > 0 %} ({{ scan['HighNP'] }} NP){% endif %}</td>
+            <td>{{ scan['Medium'] }}{% if scan['MediumNP'] > 0 %} ({{ scan['MediumNP'] }} NP){% endif %}</td>
+            <td>
+                <div class="btn-group">
+                    <a href="{{ url_for('edit_scan', id=scan['ID']) }}" class="btn btn-primary">Edit</a>
+                    <form method="POST" action="{{ url_for('delete_scan', id=scan['ID']) }}" style="display: inline;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Delete this scan?')">Delete</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if scans|length == 0 %}
+<p style="margin-top: 2rem; text-align: center; color: #666;">No scans found. <a href="{{ url_for('new_scan') }}">Add one now</a>.</p>
+{% endif %}
+{% endblock %}

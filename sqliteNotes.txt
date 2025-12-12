@@ -1,0 +1,51 @@
+sqliteNotes.txt
+
+To start the web site from C:\Users\W988276\AppData\Local\monthlyReportDatabase\FlaskUI:
+python app.py
+
+To build it:
+python -m pip install -r requirements.txt
+
+PRAGMA foreign_keys = ON; # turn them on, use on command line
+PRAGMA foreign_keys; # returns 1 if they are on
+
+in power shell
+cd C:\Users\W988276\AppData\Local\monthlyReportDatabase
+.\CreateDatabase.ps1
+
+# Show schema
+sqlite3 'C:\Users\W988276\AppData\Local\monthlyReportDatabase\monthlyReport.db' ".schema Artifacts"
+sqlite3 '.\monthlyReport.db' ".schema Artifacts"
+# Or more detailed
+sqlite3 '.\monthlyReport.db' "PRAGMA table_info(Artifacts);"
+
+
+$env:PATH = "C:\sqlite;$env:PATH"
+
+C:\sqlite\sqlite3 monthlyReport.db "PRAGMA integrity_check;"
+
+# Recommended per-user path 
+$dbDir  = Join-Path $env:LOCALAPPDATA 'monthlyReportDatabase'
+$dbPath = Join-Path $dbDir 'myapp.db'
+
+# Create dir if needed
+if (-not (Test-Path $dbDir)) {
+    New-Item -ItemType Directory -Path $dbDir -Force | Out-Null
+}
+
+# Example: create an empty sqlite db (creates file)
+& 'C:\sqlite\sqlite3.exe' $dbPath "VACUUM;"
+Write-Host "DB created at: $dbPath"
+
+$dbDir = C:\Users\W988276\AppData\Local\monthlyReportDatabase\
+$dbPath = C:\Users\W988276\AppData\Local\monthlyReportDatabase\myapp.db
+
+Rapid 7 : Team (BU tag) : Name : Last Scan Date : Lines of Code : Critical : High : Medium
+
+Mend : Application : Project : Type (Want dependencies)  : Start Time (Want Status Finished) : Duration : Critical : High : Medium
+
+Checkmarx 
+
+ProjectName, Owner, Team, #Scans, RecentScanDateTime  Each has a ScanList
+For each scan, ScanStartDateTime, ScanComplete, LinesOfCode, Initiator, Type (SAST, SCA, DAST)  Each has a scan summary.  
+For each summary StartDateTime, TotalScanTime can be N/A if didn't complete. Critical, High, Medium, Lines of Coe, Fie count,  ScanID

@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}{% if scan %}Edit{% else %}New{% endif %} Scan - Monthly Report Database{% endblock %}
+
+{% block content %}
+<h2>{% if scan %}Edit{% else %}New{% endif %} Scan</h2>
+
+<form method="POST">
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="artifact_id">Artifact *</label>
+            <select id="artifact_id" name="artifact_id" required>
+                <option value="">Select an artifact...</option>
+                {% for artifact in artifacts %}
+                <option value="{{ artifact['ID'] }}" 
+                        {% if scan and scan['ArtifactID'] == artifact['ID'] %}selected{% endif %}>
+                    {{ artifact['BusinessUnit'] }} - 
+                    {% if artifact['Rapid7App'] %}{{ artifact['Rapid7App'] }}{% endif %}
+                    {% if artifact['CheckmarxProduct'] %}{{ artifact['CheckmarxProduct'] }}{% endif %}
+                    {% if artifact['MendProduct'] %}{{ artifact['MendProduct'] }}/{{ artifact['MendProject'] }}{% endif %}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="scan_tool">Scan Tool *</label>
+            <input type="text" id="scan_tool" name="scan_tool" required 
+                   value="{{ scan['ScanTool'] if scan else '' }}"
+                   placeholder="e.g., Checkmarx, Mend, Rapid7">
+        </div>
+        
+        <div class="form-group">
+            <label for="scan_type">Scan Type *</label>
+            <input type="text" id="scan_type" name="scan_type" required 
+                   value="{{ scan['ScanType'] if scan else '' }}"
+                   placeholder="e.g., SAST, SCA, DAST">
+        </div>
+        
+        <div class="form-group">
+            <label for="scan_datetime">Scan Date/Time *</label>
+            <input type="datetime-local" id="scan_datetime" name="scan_datetime" required 
+                   value="{{ scan['ScanDateTime'] if scan else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="scan_repeat_count">Scan Repeat Count</label>
+            <input type="number" id="scan_repeat_count" name="scan_repeat_count" min="1" 
+                   value="{{ scan['ScanRepeatCount'] if scan else 1 }}">
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Vulnerability Counts</h3>
+    
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="critical">Critical</label>
+            <input type="number" id="critical" name="critical" min="0" 
+                   value="{{ scan['Critical'] if scan else 0 }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="high">High</label>
+            <input type="number" id="high" name="high" min="0" 
+                   value="{{ scan['High'] if scan else 0 }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="medium">Medium</label>
+            <input type="number" id="medium" name="medium" min="0" 
+                   value="{{ scan['Medium'] if scan else 0 }}">
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Not Patched (NP) Counts</h3>
+    
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="critical_np">Critical NP</label>
+            <input type="number" id="critical_np" name="critical_np" min="0" 
+                   value="{{ scan['CriticalNP'] if scan else 0 }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="high_np">High NP</label>
+            <input type="number" id="high_np" name="high_np" min="0" 
+                   value="{{ scan['HighNP'] if scan else 0 }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="medium_np">Medium NP</label>
+            <input type="number" id="medium_np" name="medium_np" min="0" 
+                   value="{{ scan['MediumNP'] if scan else 0 }}">
+        </div>
+    </div>
+    
+    <div class="btn-group" style="margin-top: 2rem;">
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{{ url_for('scans') }}" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+{% endblock %}

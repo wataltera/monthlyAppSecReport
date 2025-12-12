@@ -1,0 +1,166 @@
+CopilotAndChecmarx
+
+A token lasts an hour.  To do something that takes longer, need to refresh the token now and then.
+
+Get access token and refresh token:
+
+curl -X POST "https://checkmarxweb.corp.allscripts.com/CxRestAPI/auth/identity/connect/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "username=your_username&password=your_password&grant_type=password&client_id=resource_owner_client&client_secret=your_client_secret"
+
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR...",
+  "expires_in": 3600,
+  "token_type": "Bearer",
+  "refresh_token": "def50200..."
+}
+
+Before the token times out, do this:
+
+curl -X POST "https://checkmarxweb.corp.allscripts.com/CxRestAPI/auth/identity/connect/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=refresh_token&refresh_token=<your_refresh_token>&client_id=resource_owner_client&client_secret=your_client_secret"
+
+Use the token:
+
+curl -X GET "https://checkmarxweb.corp.allscripts.com/CxRestAPI/projects" \
+  -H "Authorization: Bearer <new_access_token>" \
+  -H "Content-Type: application/json"
+
+
+Step 1 - get a token:
+
+curl -X POST "https://checkmarxweb.corp.allscripts.com/CxRestAPI/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "username": "your_username",
+        "password": "your_password",
+        "grant_type": "password"
+      }'
+
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "expires_in": 3600,
+  "token_type": "Bearer",
+  "refresh_token": "def50200a1b2c3d4..."
+}
+
+Git a list of team:
+
+curl -X GET "https://checkmarxweb.corp.allscripts.com/CxRestAPI/auth/teams" \
+  -H "Authorization: Bearer <your_token_here>" \
+  -H "Content-Type: application/json"
+
+[
+  { "id": 101, "name": "FinanceApps" },
+  { "id": 102, "name": "MobileApps" }
+]
+
+Git a list of projects for a team:
+
+curl -X GET "https://checkmarxweb.corp.allscripts.com/CxRestAPI/projects?teamId=102" \
+  -H "Authorization: Bearer <your_token_here>" \
+  -H "Content-Type: application/json"
+
+[
+  {
+    "id": 201,
+    "name": "MobileBankingApp",
+    "teamId": 102
+  },
+  {
+    "id": 202,
+    "name": "PatientPortal",
+    "teamId": 102
+  }
+]
+
+Get a list of all projects:
+
+curl -X GET "https://checkmarxweb.corp.allscripts.com/CxRestAPI/projects" \
+  -H "Authorization: Bearer <your_token_here>" \
+  -H "Content-Type: application/json"
+
+Trigger a scan:
+
+curl -X POST "https://checkmarxweb.corp.allscripts.com/CxRestAPI/sast/scans" \
+  -H "Authorization: Bearer <your_token_here>" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "projectId": 123,
+        "isIncremental": false,
+        "isPublic": true,
+        "forceScan": true
+      }'
+
+Get list of scans:
+
+GET /CxRestAPI/sast/scans
+
+Filer ty project ID
+
+curl -X GET "https://checkmarxweb.corp.allscripts.com/CxRestAPI/sast/scans?projectId=123" \
+  -H "Authorization: Bearer <your_token_here>" \
+  -H "Content-Type: application/json"
+
+Returns .json list of scans.
+[
+  {
+    "id": 456,
+    "projectId": 123,
+    "status": "Finished",
+    "initiatorName": "jdoe",
+    "dateAndTime": {
+      "startedOn": "2025-12-01T10:15:00",
+      "finishedOn": "2025-12-01T10:45:00"
+    }
+  },
+  {
+    "id": 457,
+    "projectId": 123,
+    "status": "Running",
+    "initiatorName": "jdoe",
+    "dateAndTime": {
+      "startedOn": "2025-12-10T09:00:00"
+    }
+  }
+]
+
+
+GET /CxRestAPI/sast/scans/{scanId}/results
+
+curl -X GET "https://checkmarxweb.corp.allscripts.com/CxRestAPI/sast/scans/456/results" \
+  -H "Authorization: Bearer <your_token_here>" \
+  -H "Content-Type: application/json"
+
+{
+  "scanId": 456,
+  "statistics": {
+    "highSeverity": 12,
+    "mediumSeverity": 34,
+    "lowSeverity": 56,
+    "infoSeverity": 7
+  }
+}
+
+Count of not an issue:
+
+curl -X GET "https://checkmarxweb.corp.allscripts.com/CxRestAPI/sast/scans/456/results" \
+  -H "Authorization: Bearer <your_token_here>" \
+  -H "Content-Type: application/json"
+
+{
+  "scanId": 456,
+  "statistics": {
+    "highSeverity": 12,
+    "mediumSeverity": 34,
+    "lowSeverity": 56,
+    "infoSeverity": 7,
+    "stateStatistics": {
+      "confirmed": 20,
+      "urgent": 5,
+      "proposedNotExploitable": 10,
+      "notAnIssue": 8
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}{% if artifact %}Edit{% else %}New{% endif %} Artifact - Monthly Report Database{% endblock %}
+
+{% block content %}
+<h2>{% if artifact %}Edit{% else %}New{% endif %} Artifact</h2>
+
+<form method="POST">
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="business_unit">Business Unit *</label>
+            <input type="text" id="business_unit" name="business_unit" required 
+                   value="{{ artifact['BusinessUnit'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="owner">Owner</label>
+            <input type="text" id="owner" name="owner" 
+                   value="{{ artifact['Owner'] if artifact else '' }}">
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Data Sources (at least one required)</h3>
+    
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="altera_product">Altera Product</label>
+            <input type="text" id="altera_product" name="altera_product" 
+                   value="{{ artifact['AlteraProduct'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="rapid7_app">Rapid7 App</label>
+            <input type="text" id="rapid7_app" name="rapid7_app" 
+                   value="{{ artifact['Rapid7App'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="checkmarx_product">Checkmarx Product</label>
+            <input type="text" id="checkmarx_product" name="checkmarx_product" 
+                   value="{{ artifact['CheckmarxProduct'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="mend_product">Mend Product</label>
+            <input type="text" id="mend_product" name="mend_product" 
+                   value="{{ artifact['MendProduct'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="mend_project">Mend Project</label>
+            <input type="text" id="mend_project" name="mend_project" 
+                   value="{{ artifact['MendProject'] if artifact else '' }}">
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Scan Counts</h3>
+    
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="sca_scans">SCA Scans</label>
+            <input type="number" id="sca_scans" name="sca_scans" min="0" 
+                   value="{{ artifact['SCAScans'] if artifact else 0 }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="sast_scans">SAST Scans</label>
+            <input type="number" id="sast_scans" name="sast_scans" min="0" 
+                   value="{{ artifact['SASTScans'] if artifact else 0 }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="dast_scans">DAST Scans</label>
+            <input type="number" id="dast_scans" name="dast_scans" min="0" 
+                   value="{{ artifact['DASTScans'] if artifact else 0 }}">
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Recent Scan Information</h3>
+    
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="recent_sca">Recent SCA</label>
+            <input type="text" id="recent_sca" name="recent_sca" 
+                   value="{{ artifact['RecentSCA'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="recent_sca_ok" name="recent_sca_ok" value="1"
+                       {% if artifact and artifact['RecentSCAOK'] %}checked{% endif %}>
+                Recent SCA OK
+            </label>
+        </div>
+        
+        <div class="form-group">
+            <label for="recent_sast">Recent SAST</label>
+            <input type="text" id="recent_sast" name="recent_sast" 
+                   value="{{ artifact['RecentSAST'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="recent_sast_ok" name="recent_sast_ok" value="1"
+                       {% if artifact and artifact['RecentSASTOK'] %}checked{% endif %}>
+                Recent SAST OK
+            </label>
+        </div>
+        
+        <div class="form-group">
+            <label for="recent_dast">Recent DAST</label>
+            <input type="text" id="recent_dast" name="recent_dast" 
+                   value="{{ artifact['RecentDAST'] if artifact else '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="recent_dast_ok" name="recent_dast_ok" value="1"
+                       {% if artifact and artifact['RecentDASTOK'] %}checked{% endif %}>
+                Recent DAST OK
+            </label>
+        </div>
+        
+        <div class="form-group">
+            <label for="recent_loc">Recent LOC</label>
+            <input type="number" id="recent_loc" name="recent_loc" min="0" 
+                   value="{{ artifact['RecentLOC'] if artifact else 0 }}">
+        </div>
+    </div>
+    
+    <div class="btn-group" style="margin-top: 2rem;">
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{{ url_for('artifacts') }}" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+{% endblock %}

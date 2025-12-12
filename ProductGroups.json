@@ -1,0 +1,67 @@
+{
+  "dbMotion": {
+    "Mend": {
+      "dbMotion" : "78f3e14c73b448598edaf2ad28c8c651fb963d184e6a4681b6fb55eef2d0620e"
+    },
+    "Checkmarx": {
+      "dbMotion-Main" : "56789"
+    }
+  },
+  "Paragon": {
+    "Mend": {
+      "Paragon" : "bda61e26f2164ed8b31bac20baffe2ea1eb55dbbb9b74dd697d79bf260e53b79"
+    },
+    "Checkmarx": {
+      "Paragon-Main" : "67890",
+      "RIS" : "67891",
+      "PACS" : "67892"
+    }
+  },
+  "Sunrise": {
+    "Mend": {
+      "CareDirector" : "edaa3bdc1c484de492481f972223ed4676669a7f6b9945a689374909fe8e1111",
+      "CPM" : "3bc94c9ac9b4432aa8056f17d498557f1bad220dcba643e0a2f8fc4b9093c9d1",
+      "GH_tw-mobile" : "8a54b8f7c5154bbdb3128ca9f0770a5b8ea21e159b3b4e05913bb46480c301f6",
+      "PatientAdministrationSystem-Replatform" : "c1d57753192e46f2bfd5413a99aa1854608564f52fd34645912ae823235244f8",
+      "PatientAdministrationSystem" : "a80732522cce41d6b6d73d3ea14641c2ce4a535e40ea45b78d07d8c9912b37d3",
+      "PlatformOfHealth" : "6d4ecfde70f34d64aefb5244d81fc36851d8f1f6f78245769995ada5f96da5f9",
+      "Prenatal" : "b4ec50a761bf430b91ecbbb087f3a070d25dd544a03248e18c1a0ec6717e4978",
+      "Sunrise-Main" : "ddba8b19b8e44efe9954f2beed56cd4db4f077f5982140f6804e0506a972162a",
+      "TWMobile" : "7decd1ce253040b9ac384429fb71d22cf5553d0cda1a44b9a7bf508854f897f6"
+    },
+    "Checkmarx": {
+      "Sunrise-Main" : "12345",
+      "PlatformOfHealth" : "12346",
+      "PatientAdministrationSystem" : "12347"
+    }
+  },
+  "Ventus": {
+    "Mend": {
+      "VentusContractManagement" : "f857f1e5faa24a03a848cd5c551fa887c7752a4707cc452b817b95cde67f2fef",
+      "Allscripts-Intelligent-Coding" : "2331a6b2dfd14cbf89a152e935bcd107b88cf1c37de045f6aea41d714452e078",
+      "Allscripts-Surgical-Manager" : "bbd66cb02d514771b92f2a1388094cf0c51da1ffe8f44944a58e1c2a83386883",
+      "AllscriptsPathwaysHealthcareScheduling" : "aa05301059f542fab4e36ba46eebd2cedb85aa0b029d43dfb65434a2a3ccce7b",
+      "AllscriptsTissueManager" : "b9c513ceaaeb4df3b293a1638b54549972c50ed14abf426c98acbc96208c0eae",
+      "Compliance-Advisor" : "b0bd26bab42c40f9a5d3f827b99f8ebba154d6c18adb43f4a92a4ccb71b4a868",
+      "HealthQuest" : "a95ab2e83796494e85b1ab965f7bcea61cca7ee954b94c819d46072b13af37d7",
+      "IntegratedPatientRecord" : "39fa98ca72b141c6b0d2c82e9ca35fa54dc82ae74a6f481dbb07ee6bad4f38d9",
+      "My Product" : "d255ca9c6b89455399de305b71e0e8d165159542025340f99989c7df41d0fb1f",
+      "STAR" : "711e9631e75c44d5945f952a49ec5f21f9f6dbc190054b6891a07579e47aff6e"
+    },
+    "Checkmarx": {
+      "VentusContractManagement" : "23456",
+      "Allscripts-Intelligent-Coding" : "23457"
+    }
+  },
+  "Touchworks": {
+    "Mend": {
+      "TouchWorks" : "e4214c8eab4b428f861c6f62ef56b9a6c681e8d13e344adbb2c9516e89652a68",
+      "TouchWorks-API" : "030bf7b9ac3941c384325aaad50131eddb6c552749734bbf9fcf14e3dbe121b4",
+      "TouchWorks-Note+" : "4519f54187f542f49e5813581a110507ea2f7c774bd74cfba3021b1282754d8c"
+    },
+    "Checkmarx": {
+      "TouchWorks" : "34567",
+      "TouchWorks-API" : "34568"
+    }
+  }
+}

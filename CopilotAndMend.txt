@@ -1,0 +1,35 @@
+CopilotAndMend
+
+When using Mend (Formerly WhiteSource) dependency analysis tool which identifies vulnerable libraries, what is the difference between the mend command "dependencies: Run dependencies (SCA) scan (alt: mend dep , mend sca)" and the command "ua: Run dependencies (SCA) scan with unified-agent engine?"
+
+mend dep runs after a build, mend ua can run before a build.  ua requires a complex configuration file and takes more computation resources.
+
+Sample mend command for dimpoc SCA scan
+
+\mend\mend.exe dep --mend-url https://saas.mend.io/ -s 'sandbox//dimpoc' -u <user key> -k <api key> --source <path> defaults to .  
+
+Needs --build "build command" if it has to do its own build.  Leave this off if it's been built.
+
+mend sast for source vulnerabilities.
+
+mend sca --source ./my-app -u <your_user_key> -k <your_api_key> --project <project_name>
+
+Measure-Command { \mend\mend.exe sca -s 'sandbox//dimpoc' }
+Measure-Command { \mend\mend.exe sast -s 'sandbox//dimpoc' }
+
+# Run in the top of the dimpoc source code directory.
+..\..\mend\mend.exe sca -u -s 'sandbox//dimpoc'
+
+ & ".\MendMultiProductRestAPI.ps1" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9
+
+& .\MendListAllProducts.ps1 -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 > output.txt
+
+ & ".\MendPopulateTables.ps1" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 -GivePath_To_Generate_Report .\ -whichBU Touchworks *> output.txt to collect all output streams including the console.   -Verbose is a built-in PowerScript parameter.  -Verbose 4>&1 > output.txt includes Write-Verbose and Write-Output and Write-Host goes to the console.
+
+Stream numbers:
+
+4>&1 redirects Verbose to Success output stream
+5>&1 redirects Debug to Success output stream
+*> redirects all streams (Success, Error, Warning, Verbose, Debug, Information)
+
+C:\sqlite\sqlite3 monthlyReport.db to get a sqlite> prompt:  .tables .schema .quit Scans SQL statements end with a ;

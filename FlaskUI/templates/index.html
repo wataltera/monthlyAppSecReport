@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to Monthly Report Database UI</h2>
+<p>Use the navigation above to manage your artifacts and scans.</p>
+
+<div style="margin-top: 2rem;">
+    <h3>Quick Actions</h3>
+    <div class="btn-group" style="margin-top: 1rem;">
+        <a href="{{ url_for('artifacts') }}" class="btn btn-primary">View Artifacts</a>
+        <a href="{{ url_for('new_artifact') }}" class="btn btn-success">Add New Artifact</a>
+        <a href="{{ url_for('scans') }}" class="btn btn-primary">View Scans</a>
+        <a href="{{ url_for('new_scan') }}" class="btn btn-success">Add New Scan</a>
+    </div>
+</div>
+
+<div style="margin-top: 2rem;">
+    <h3>About</h3>
+    <p>This web interface allows you to view and edit the Artifacts and Scans tables in your SQLite database.</p>
+    <ul style="margin-left: 2rem; margin-top: 1rem;">
+        <li><strong>Artifacts:</strong> Business units and their associated security scanning products</li>
+        <li><strong>Scans:</strong> Security scan results linked to artifacts</li>
+    </ul>
+</div>
+{% endblock %}

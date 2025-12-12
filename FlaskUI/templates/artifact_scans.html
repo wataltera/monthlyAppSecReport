@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Scans for {{ artifact['BusinessUnit'] }} - Monthly Report Database{% endblock %}
+
+{% block content %}
+<h2>Scans for Artifact: {{ artifact['BusinessUnit'] }}</h2>
+
+<div style="background: #f9f9f9; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+    <h3>Artifact Details</h3>
+    <p><strong>Business Unit:</strong> {{ artifact['BusinessUnit'] }}</p>
+    {% if artifact['Rapid7App'] %}<p><strong>Rapid7 App:</strong> {{ artifact['Rapid7App'] }}</p>{% endif %}
+    {% if artifact['CheckmarxProduct'] %}<p><strong>Checkmarx Product:</strong> {{ artifact['CheckmarxProduct'] }}</p>{% endif %}
+    {% if artifact['MendProduct'] %}<p><strong>Mend Product:</strong> {{ artifact['MendProduct'] }}</p>{% endif %}
+    {% if artifact['MendProject'] %}<p><strong>Mend Project:</strong> {{ artifact['MendProject'] }}</p>{% endif %}
+    {% if artifact['Owner'] %}<p><strong>Owner:</strong> {{ artifact['Owner'] }}</p>{% endif %}
+</div>
+
+<div class="actions">
+    <a href="{{ url_for('artifacts') }}" class="btn btn-secondary">Back to Artifacts</a>
+    <a href="{{ url_for('new_scan') }}" class="btn btn-success">Add New Scan</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tool</th>
+            <th>Type</th>
+            <th>Date/Time</th>
+            <th>Repeat Count</th>
+            <th>Critical</th>
+            <th>High</th>
+            <th>Medium</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for scan in scans %}
+        <tr>
+            <td>{{ scan['ID'] }}</td>
+            <td>{{ scan['ScanTool'] }}</td>
+            <td>{{ scan['ScanType'] }}</td>
+            <td>{{ scan['ScanDateTime'] }}</td>
+            <td>{{ scan['ScanRepeatCount'] }}</td>
+            <td>{{ scan['Critical'] }}{% if scan['CriticalNP'] > 0 %} ({{ scan['CriticalNP'] }} NP){% endif %}</td>
+            <td>{{ scan['High'] }}{% if scan['HighNP'] > 0 %} ({{ scan['HighNP'] }} NP){% endif %}</td>
+            <td>{{ scan['Medium'] }}{% if scan['MediumNP'] > 0 %} ({{ scan['MediumNP'] }} NP){% endif %}</td>
+            <td>
+                <div class="btn-group">
+                    <a href="{{ url_for('edit_scan', id=scan['ID']) }}" class="btn btn-primary">Edit</a>
+                    <form method="POST" action="{{ url_for('delete_scan', id=scan['ID']) }}" style="display: inline;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Delete this scan?')">Delete</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if scans|length == 0 %}
+<p style="margin-top: 2rem; text-align: center; color: #666;">No scans found for this artifact. <a href="{{ url_for('new_scan') }}">Add one now</a>.</p>
+{% endif %}
+{% endblock %}
