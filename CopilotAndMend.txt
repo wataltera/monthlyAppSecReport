@@ -20,11 +20,18 @@ Measure-Command { \mend\mend.exe sast -s 'sandbox//dimpoc' }
 # Run in the top of the dimpoc source code directory.
 ..\..\mend\mend.exe sca -u -s 'sandbox//dimpoc'
 
- & ".\MendMultiProductRestAPI.ps1" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9
+& .\MendScanDetails.ps1 -GivePath_To_Generate_Report "C:\powershell" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 -whichBU Touchworks *> output.txt
+
+& .\MendScanDetails.ps1 -GivePath_To_Generate_Report "C:\powershell" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 *> output.txt
+
+
+& ".\MendMultiProductRestAPI.ps1" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9
 
 & .\MendListAllProducts.ps1 -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 > output.txt
 
- & ".\MendPopulateTables.ps1" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 -GivePath_To_Generate_Report .\ -whichBU Touchworks *> output.txt to collect all output streams including the console.   -Verbose is a built-in PowerScript parameter.  -Verbose 4>&1 > output.txt includes Write-Verbose and Write-Output and Write-Host goes to the console.
+& ".\MendPopulateTables.ps1" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 -GivePath_To_Generate_Report .\ -whichBU Touchworks *> output.txt to collect all output streams including the console.   -Verbose is a built-in PowerScript parameter.  -Verbose 4>&1 > output.txt includes Write-Verbose and Write-Output and Write-Host goes to the console.
+
+& ".\MendScanDetails - Copy.ps1" -userKey fbafef7f89334a898d5e44edaf5a645162e42097eff940faa4cea7f92548e3f9 -GivePath_To_Generate_Report .\ -whichBU Sunrise *> output.txt
 
 Stream numbers:
 

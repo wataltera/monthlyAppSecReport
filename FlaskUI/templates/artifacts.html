@@ -54,10 +54,16 @@
                    placeholder="Partial match">
         </div>
     </div>
-    <div class="btn-group" style="margin-top: 0.5rem;">
-        <button type="submit" class="btn btn-primary">Filter</button>
-        <a href="{{ url_for('artifacts') }}?clear=1" class="btn btn-secondary">Clear</a>
-        <a href="{{ url_for('export_artifacts') }}" class="btn btn-success">Export to Excel</a>
+    <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Filter</button>
+            <a href="{{ url_for('artifacts') }}?clear=1" class="btn btn-secondary">Clear</a>
+            <a href="{{ url_for('export_artifacts') }}" class="btn btn-success">Export to Excel</a>
+        </div>
+        <div class="btn-group">
+            <button type="button" onclick="bulkToggleDelete(0)" class="btn btn-success">Include All</button>
+            <button type="button" onclick="bulkToggleDelete(1)" class="btn btn-danger">Exclude All</button>
+        </div>
     </div>
 </form>
 
@@ -92,9 +98,12 @@
                 <div class="btn-group">
                     <a href="{{ url_for('artifact_scans', id=artifact['ID']) }}" class="btn btn-primary">Scans</a>
                     <a href="{{ url_for('edit_artifact', id=artifact['ID']) }}" class="btn btn-primary">Edit</a>
-                    <form method="POST" action="{{ url_for('delete_artifact', id=artifact['ID']) }}" style="display: inline;">
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Mark this artifact as deleted?')">Delete</button>
-                    </form>
+                    <button 
+                        onclick="toggleDelete({{ artifact['ID'] }}, {{ artifact['Deleted'] }})" 
+                        class="btn btn-{% if artifact['Deleted'] == 0 %}success{% else %}danger{% endif %}" 
+                        id="toggle-btn-{{ artifact['ID'] }}">
+                        {% if artifact['Deleted'] == 0 %}Exclude{% else %}Include{% endif %}
+                    </button>
                 </div>
             </td>
         </tr>
@@ -105,4 +114,66 @@
 {% if artifacts|length == 0 %}
 <p style="margin-top: 2rem; text-align: center; color: #666;">No artifacts found. <a href="{{ url_for('new_artifact') }}">Add one now</a>.</p>
 {% endif %}
+
+<script>
+function toggleDelete(artifactId, currentStatus) {
+    fetch(`/artifacts/${artifactId}/toggle`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ deleted: currentStatus })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const btn = document.getElementById(`toggle-btn-${artifactId}`);
+            if (data.new_status === 0) {
+                btn.className = 'btn btn-success';
+                btn.textContent = 'Exclude';
+                btn.onclick = () => toggleDelete(artifactId, 0);
+            } else {
+                btn.className = 'btn btn-danger';
+                btn.textContent = 'Include';
+                btn.onclick = () => toggleDelete(artifactId, 1);
+            }
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function bulkToggleDelete(newStatus) {
+    const artifactIds = [];
+    {% for artifact in artifacts %}
+    artifactIds.push({{ artifact['ID'] }});
+    {% endfor %}
+    
+    fetch('/artifacts/bulk-toggle', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ artifact_ids: artifactIds, deleted: newStatus })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Update all buttons
+            artifactIds.forEach(id => {
+                const btn = document.getElementById(`toggle-btn-${id}`);
+                if (newStatus === 0) {
+                    btn.className = 'btn btn-success';
+                    btn.textContent = 'Exclude';
+                    btn.onclick = () => toggleDelete(id, 0);
+                } else {
+                    btn.className = 'btn btn-danger';
+                    btn.textContent = 'Include';
+                    btn.onclick = () => toggleDelete(id, 1);
+                }
+            });
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 {% endblock %}

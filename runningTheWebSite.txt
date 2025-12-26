@@ -1,0 +1,8 @@
+RunningTheWebSite
+
+It runs from the FlaskUI folder.
+
+cd c:\Users\W988276\AppData\Local\monthlyReportDatabase\FlaskUI
+python app.py
+
+Browse  http://127.0.0.1:5000

@@ -1,5 +1,9 @@
 CopilotAndChecmarx
 
+ProjectName, Owner, Team, #Scans, RecentScanDateTime  Each has a ScanList
+For each scan, ScanStartDateTime, ScanComplete, LinesOfCode, Initiator, Type (SAST, SCA, DAST)  Each has a scan summary.  
+For each summary StartDateTime, TotalScanTime can be N/A if didn't complete. Critical, High, Medium, Lines of Code, File count,  ScanID
+
 A token lasts an hour.  To do something that takes longer, need to refresh the token now and then.
 
 Get access token and refresh token:

@@ -52,7 +52,7 @@ def artifacts():
     mend_project = filters.get('mend_project', '')
     
     # Build query with filters
-    query = 'SELECT * FROM Artifacts WHERE Deleted = 0'
+    query = 'SELECT * FROM Artifacts WHERE 1=1'
     params = []
     
     if business_unit:
@@ -324,6 +324,34 @@ def delete_artifact(id):
     flash('Artifact marked as deleted!', 'success')
     return redirect(url_for('artifacts'))
 
+@app.route('/artifacts/<int:id>/toggle', methods=['POST'])
+def toggle_artifact(id):
+    data = request.json
+    current_status = data.get('deleted', 0)
+    new_status = 0 if current_status == 1 else 1
+    
+    conn = get_db_connection()
+    conn.execute('UPDATE Artifacts SET Deleted = ? WHERE ID = ?', (new_status, id))
+    conn.commit()
+    conn.close()
+    
+    return jsonify({'success': True, 'new_status': new_status})
+
+@app.route('/artifacts/bulk-toggle', methods=['POST'])
+def bulk_toggle_artifacts():
+    data = request.json
+    artifact_ids = data.get('artifact_ids', [])
+    new_status = data.get('deleted', 0)
+    
+    conn = get_db_connection()
+    placeholders = ','.join('?' * len(artifact_ids))
+    query = f'UPDATE Artifacts SET Deleted = ? WHERE ID IN ({placeholders})'
+    conn.execute(query, [new_status] + artifact_ids)
+    conn.commit()
+    conn.close()
+    
+    return jsonify({'success': True, 'count': len(artifact_ids)})
+
 @app.route('/scans')
 def scans():
     conn = get_db_connection()
@@ -415,7 +443,7 @@ def export_scans():
             SELECT s.*, a.BusinessUnit, a.Rapid7App, a.CheckmarxProduct, a.MendProduct, a.MendProject
             FROM Scans s
             JOIN Artifacts a ON s.ArtifactID = a.ID
-            WHERE s.ID IN (
+            WHERE a.Deleted = 0 AND s.ID IN (
                 SELECT s2.ID FROM Scans s2
                 WHERE s2.ArtifactID = s.ArtifactID 
                   AND s2.ScanTool = s.ScanTool
@@ -434,7 +462,7 @@ def export_scans():
             SELECT s.*, a.BusinessUnit, a.Rapid7App, a.CheckmarxProduct, a.MendProduct, a.MendProject
             FROM Scans s
             JOIN Artifacts a ON s.ArtifactID = a.ID
-            WHERE 1=1
+            WHERE a.Deleted = 0
         '''
     params = []
     

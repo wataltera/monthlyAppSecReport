@@ -1,0 +1,704 @@
+Product: Allscripts-Intelligent-Coding
+    Project: VIC vNext
+Product: Allscripts-Lab-Solutions
+    Project: ALAB-23.1
+    Project: ALAB-23.2
+Product: Allscripts-Surgical-Manager
+    Project: VSM 2022.1
+    Project: VSM 2020.1
+    Project: VTM 2022.1
+Product: AllscriptsPathwaysHealthcareScheduling
+    Project: VPHS 2021.1 Webserver
+    Project: VPHS Thick 2021.1
+    Project: VPHS 2025.1 Webserver
+    Project: VPHS Thick 2025.1
+Product: AllscriptsTissueManager
+    Project: VTM 2021.1
+    Project: VTM 2023.1
+    Project: VTM 2024.x
+Product: Altera Context
+    Project: Core - 19.3.4
+    Project: ContextMgt - 19.3.4
+    Project: Core - 19.3.7
+    Project: ContextMgt - 19.3.7
+    Project: ContextService - 19.3.7
+    Project: EnablerService - 19.3.7
+    Project: ParticipantService - 19.3.7
+    Project: AdminService - 19.3.7
+    Project: ContextService - 19.3.7.1
+    Project: Core - 19.3.8
+    Project: ContextMgt - 19.3.8
+    Project: ContextService - 19.3.8
+    Project: EnablerService - 19.3.8
+    Project: ParticipantService - 19.3.8
+    Project: AdminService - 19.3.8
+    Project: Core - 19.3.9
+    Project: ContextMgt - 19.3.9
+    Project: ContextService - 19.3.9
+    Project: ParticipantService - 19.3.9
+    Project: EnablerService - 19.3.9
+    Project: AdminService - 19.3.9
+    Project: Core - 19.3.14
+    Project: ContextMgt - 19.3.14
+    Project: ContextService - 19.3.14
+    Project: EnablerService - 19.3.9.1
+    Project: Core - 19.4.0
+    Project: ContextMgt - 19.4.0
+    Project: ContextService - 19.4.0
+    Project: ParticipantService - 19.4.0
+    Project: EnablerService - 19.4.0
+    Project: AdminService - 19.4.0
+    Project: ContextService - 19.3.9.1
+    Project: EnablerService - 19.3.9.2
+Product: Altera Patient Flow
+    Project: main-source
+    Project: main-common
+    Project: mobile-source
+Product: BossNet
+No projects found in response
+Product: BusinessContinuitySolution
+    Project: ParagonWebAPI
+    Project: ParagonUI
+    Project: BCSWebApiV4
+    Project: SCMBCSUiV4
+Product: CareDirector
+    Project: CareDirectorScan23_2 (Not in use)
+    Project: CareDirectorScan23_3
+    Project: CareDirectorScan24_1
+    Project: 24_2
+    Project: CD-Test
+    Project: 24_3
+    Project: 24_4
+    Project: 25_1
+    Project: 25_2
+    Project: 25_3
+Product: ClaimsAdministrator
+    Project: ClaimsAdmin
+Product: Compliance-Advisor
+    Project: ACA2022DeploymentFiles
+    Project: ACA2023DeploymentFiles
+    Project: ACA2024DeploymentFiles
+    Project: ACA2025DeploymentFiles
+Product: CPM
+    Project: C#-Dev-Scan
+Product: dbMotion
+    Project: Skylark-CU1
+    Project: Myna
+    Project: Myna-CU1
+    Project: 25.2.1
+    Project: CQ.Telemetry
+    Project: CQ.ParticipantDirectory
+    Project: CQ.Management
+    Project: CQ.BrokeringRespondingGateway
+    Project: PatientSearchService
+    Project: ConfigurationService
+    Project: CQ.ManagementCenter
+    Project: CVista
+    Project: Prefetch.API
+    Project: Dream-agent
+    Project: dbm-star
+    Project: dream-databricks
+    Project: TransformationService1
+    Project: TransformationService3
+    Project: 26.1
+    Project: CareInTelligence
+    Project: TEFCA.DocumentProvider
+    Project: TEFCA.Documents
+    Project: TEFCA.Gateway
+    Project: TEFCA.ManagementAPI
+    Project: TEFCA.Patients
+    Project: TEFCA.Tenants
+    Project: TEFCA.Core
+Product: GH_tw-mobile
+    Project: GH_tw-mobile
+Product: HealthQuest
+No projects found in response
+Product: IntegratedPatientRecord
+    Project: ESTH - TR
+    Project: cON - R12
+    Project: cON - R13
+Product: My Product
+    Project: Passport_2024_TFS_scan
+Product: Paragon
+    Project: Main
+    Project: Main-Client
+    Project: Main-Fhir
+    Project: 22.1.1.x_Main
+    Project: 22.2.0.x_Client
+    Project: 22.1.1.x_Client
+    Project: 23.1.0.x_Client
+    Project: 23.1.0.x_Main
+    Project: 23.1.0.x_Fhir
+    Project: ClaimsAdmin
+    Project: 23.2.0.x_Client
+    Project: 23.2.0.x_Main
+    Project: 23.2.0.x_Fhir
+    Project: 24.1.0.x_Client
+    Project: 24.1.0.x_Main
+    Project: 24.1.0.x_Fhir
+    Project: Denali_Net
+    Project: Denali_Fhir
+    Project: Denali_Client
+    Project: Physician Mobile
+    Project: SmartInvoice
+    Project: Mobile-ERP
+    Project: MobileERP
+    Project: AIFramework
+Product: Patient Administration System - Legacy
+    Project: PAS_Java
+    Project: SharedLibraries:dataset-mapper
+    Project: SharedLibraries:jwt-token
+    Project: SharedLibraries:PAS_DECRYPTOR
+    Project: SharedLibraries:PAS_ENCRYPTOR
+    Project: SharedLibraries:SAML
+    Project: PAS_FormsApplet
+    Project: srvc-bldr:shared
+    Project: CasualityCardApplet
+    Project: ClientinfoApplet
+    Project: CmdApplet
+    Project: DictaphoneApplet
+    Project: GraphApplet
+    Project: HostnameApplet
+    Project: ImagemapApplet
+    Project: JimagemapApplet
+    Project: LabeltraceApplet
+    Project: LocalPrintingApplet
+    Project: MailmergeApplet
+    Project: MedicodeApplet
+    Project: MultigraphApplet
+    Project: AppletPlugin
+    Project: PrintApplet
+    Project: ScannerApplet
+    Project: ScannernewApplet
+    Project: SmartcardApplet
+    Project: adt_wb
+    Project: Kiosk
+    Project: srvc-bldr:services
+    Project: 2WayMHS:FHIRServer
+    Project: 2WayMHS:MHSDBClient
+    Project: 2WayMHS:LDAPClient
+    Project: 2WayMHS:FHIRModel
+    Project: 2WayMHS:MHSClient
+    Project: 2WayMHS:MHSModel
+    Project: 2WayMHS:PASModel
+    Project: Interface:R3
+    Project: Interface:common
+    Project: Interface:socket
+    Project: Dashboard:Bed_Management
+    Project: Bars Server
+    Project: Bars Model
+    Project: API Client
+    Project: API DB Client
+    Project: Api App Server
+Product: PatientAdministrationSystem
+    Project: PAS_Java
+    Project: SharedLibraries:dataset-mapper
+    Project: SharedLibraries:jwt-token
+    Project: SharedLibraries:PAS_DECRYPTOR
+    Project: SharedLibraries:PAS_ENCRYPTOR
+    Project: SharedLibraries:SAML
+    Project: APIAppServer
+    Project: srvc-bldr:shared
+    Project: adt_wb
+    Project: Kiosk
+    Project: APIs
+    Project: 2WayMHS:MHSServer
+    Project: 2WayMHS:FHIRServer
+    Project: 2WayMHS:MHSDBClient
+    Project: 2WayMHS:LDAPClient
+    Project: 2WayMHS:FHIRModel
+    Project: 2WayMHS:MHSClient
+    Project: 2WayMHS:MHSModel
+    Project: 2WayMHS:PASModel
+    Project: Interface:R3
+    Project: Interface:common
+    Project: Interface:socket
+    Project: Dashboard:Bed_Management
+    Project: PAS_FormsApplet
+    Project: srvc-bldr:services
+    Project: CDSServer
+    Project: CDSModel
+    Project: APICommon
+    Project: APIUser
+    Project: DBClient
+    Project: CasualityCardApplet
+    Project: ClientinfoApplet
+    Project: CmdApplet
+    Project: DictaphoneApplet
+    Project: GraphApplet
+    Project: HostnameApplet
+    Project: ImagemapApplet
+    Project: JimagemapApplet
+    Project: LabeltraceApplet
+    Project: LocalPrintingApplet
+    Project: MailmergeApplet
+    Project: MedicodeApplet
+    Project: MultigraphApplet
+    Project: AppletPlugin
+    Project: PrintApplet
+    Project: ScannerApplet
+    Project: ScannernewApplet
+    Project: SmartcardApplet
+Product: PatientAdministrationSystem-Replatform
+    Project: PAS-WebApp
+    Project: PAS-WebApi
+    Project: PAS-Database
+    Project: PAS-Utility.ClientService
+    Project: PAS-JavaServices
+Product: PlatformOfHealth
+    Project: POH.Infrastructure.Messaging
+    Project: SunHm-HIMWebClient-24.1
+    Project: SunHm-HIMDeficiencyWebAPI-24.1
+    Project: POH-MTZWebAPI-24.1
+    Project: POH.TriggerBackgroundService.Common-24.1
+    Project: POH-Infrastructure-Common-24.1
+    Project: POH-Infrastructure-HealthChecks-24.1
+    Project: ux-plhlt-theme-base-24.1
+    Project: ux-plhlt-orders-npm-24.1
+    Project: ux-plhlt-infrastructure-npm-24.1
+    Project: ux-plhlt-schedule-npm-24.1
+    Project: ux-plhlt-config-navigation-npm-24.1
+    Project: ux-plhlt-sunrise-styles-npm-24.1
+    Project: UniversalFax-Fax.APIs-24.1
+    Project: UniversalFax-Fax.Outbound.Service-24.1
+    Project: ux-plhlt-schedule-config-npm-24.1
+    Project: ux-plhlt-sunrise-components-npm
+    Project: ux-plhlt-sunrise-icons-npm
+    Project: ux-plhlt-bcma-config-npm
+    Project: UniversalFax-Fax.Config.WebClient-24.1
+    Project: UniversalFax-Fax.Out.WebClient-24.1
+    Project: ux-plhlt-configuration-npm-release-2.x
+    Project: ux-plhlt-config-navigation-npm-release-2.x
+    Project: ux-plhlt-superbill-npm
+    Project: ux-plhlt-config-superbill-npm
+    Project: ux-plhlt-infrastructure-npm-release-2.x
+    Project: POH-UX-SuperbillWebClient-24.1
+    Project: POH.Infrastructure.Messaging-24.1
+    Project: ux-sunriseperftrackerservice-npm-7.x
+    Project: POH-BS-Superbill-25.1
+    Project: POH-BS-HealthManager-25.1
+    Project: POH-BS-RefLabOrderBackgroundService-25.1
+    Project: POH-BS-CoreDM-25.1
+    Project: POH-BS-Schedule-25.1
+    Project: POH-BS-SHM-25.1
+    Project: UniversalFax-Fax.Inbound.Service-24.1
+    Project: POH-BS-Coverage-25.2
+    Project: POH-BS-ROI-25.1
+    Project: SunHm-HIMROIWeb-24.1
+    Project: POH-BS-Sunrise.Transforms.HL7-25.1
+    Project: POH-BS-Specimen-25.2
+    Project: POH-BS-MedicationDispense-25.2
+    Project: POH-BS-Questionnaire-25.2
+    Project: POH-BS-DSI-25.1
+    Project: POH-BS-MedicationStatement-25.1
+    Project: POH-BS-BulkRequest-WorkerService-25.1
+    Project: POH-BS-Medication-25.1
+    Project: POH-BS-MedicationRequest-25.1
+    Project: POH-BS-Location-25.1
+    Project: POH-BS-Tasking-25.1
+    Project: POH-BS-CancerStaging-25.1
+    Project: POH-BS-CareTeam-25.1
+    Project: POH-BS-DocumentManipulation-25.1
+    Project: POH-BS-Procedure-25.1
+    Project: POH-BS-EnterpriseConfig-25.1
+    Project: POH-BS-UserManagement-25.1
+    Project: POH-BS-BulkRequest-25.1
+    Project: POH-BS-RelatedPerson-25.1
+    Project: POH-BS-PractitionerRole-25.1
+    Project: POH-BS-Encounter-25.1
+    Project: POH-BS-Organization-25.1
+    Project: POH-BS-Patient-25.1
+    Project: POH-BS-Practitioner-25.1
+    Project: POH-BS-Immunization-25.1
+    Project: POH-BS-Goal-25.1
+    Project: POH-BS-MedicationAdministration-25.1
+    Project: POH-BS-Condition-25.1
+    Project: POH-BS-OrderInfrastructure-25.1
+    Project: POH-BS-Group-25.1
+    Project: POH-UX-DSIWebClient-25.1
+    Project: POH-DAL-Generator-24.1
+    Project: POH-CoreServices-WebAPI-Common-24.1
+    Project: POH.Infrastructure.Security.Common-24.1
+    Project: POH-Infrastructure-Auditing-24.1
+    Project: POH.Infrastructure.Security.Interface-24.1
+    Project: POH.Infrastructure.DataAccess.Common-24.1
+    Project: POH.Infrastructure.Security.DataAccess-24.1
+    Project: POH.Infrastructure.Security.OnPrem-24.1
+    Project: POH-Infrastructure-Configuration-24.1
+    Project: POH.Infrastructure.DataAccess.Repository-24.1
+    Project: POH.Infrastucture.DataAccess.Server-24.1
+    Project: POH.Infrastructure.Security.Azure-24.1
+    Project: Sunrise.Infrastructure.Auditing.Azure-24.1
+    Project: Sunrise.Infrastructure.Auditing-24.1
+    Project: POH-UX-POHWebClient-25.1
+    Project: POH-UX-POHConfigWebclient-25.1
+    Project: ux-plhlt-bcma-config-npm-release-2.x
+    Project: POH-BS-PatientTracking-25.1
+    Project: ux-plhlt-bcma-npm-release-1.x
+    Project: POH-UX-PatientTrackingWebClient-25.1
+    Project: SunHm-HIMWebClient-25.1
+    Project: SunHm-HIMReportWebAPI-25.1
+    Project: UniversalFax-Fax.In.WebClient-24.1
+    Project: SunHm-HIMDeficiencyWebAPI-25.1
+    Project: SunHm-HIMReportDataSync-25.1
+    Project: SunHm-HIMROIWeb-25.1
+    Project: SunHm-HIMReportPrintService-25.1
+    Project: SunHm-HIMReportWeb-25.1
+    Project: SunHm-HIMReportTransmission-25.1
+    Project: ux-plhlt-print-barcode-label-npm-release-1.x
+    Project: POH-BS-Patient-25.2
+    Project: POHGraphQL-25.1
+    Project: SunHm-HIMReportConfigWeb-25.1
+    Project: POH-UX-ConfigToolsWebClient-25.1
+    Project: SunTools
+    Project: POH-BS-AmbyAcronymExpansion-25.1
+    Project: POH-BS-ClientLogger-25.1
+    Project: ux-plhlt-schedule-config-npm-release-2.x
+    Project: ux-plhlt-schedule-npm-release-2.x
+    Project: UniversalFax-Fax.Inbound.Service-25.1
+    Project: POH-BS-AllergyIntolerance-25.1
+    Project: POH-BS-CarePlan-25.1
+    Project: POH-BackgroundService-AppInsights-25.1
+    Project: POH-BackgroundService-Common-25.1
+    Project: POH-BS-Common-25.1
+    Project: POH-CoreServices-WebAPI-Common-25.1
+    Project: POH-BS-Infra.PublicDataObjects-25.1
+    Project: UniversalFax-Fax.Out.WebClient-25.1
+    Project: POH-Infrastructure-Auditing-25.1
+    Project: POH-BS-Device-25.1
+    Project: POH.Infrastructure.Security.Interface-25.1
+    Project: POH.Infrastructure.DataAccess.Common-25.1
+    Project: POH.TriggerBackgroundService.Common-25.1
+    Project: POH-Infrastructure-Configuration-25.1
+    Project: POH-BS-Infra.Publisher-25.1
+    Project: POH-BS-DiagnosticReport-25.1
+    Project: POH-BS-Infra.WebApi.Versioning-25.1
+    Project: POH-Infrastructure-Common-25.1
+    Project: POH-BS-Infra.WebApi.Cache-25.1
+    Project: POH-Infrastructure-HealthChecks-25.1
+    Project: POH-BS-UnitTestUntilities-Nuget-25.1
+    Project: POH-BS-ServiceRequest-25.2
+    Project: POH-BS-Binary-25.1
+    Project: POH-DAL-Generator-25.1
+    Project: POH.Infrastructure.Security.Common-25.1
+    Project: POH.Infrastructure.Security.DataAccess-25.1
+    Project: POH.Infrastructure.Security.OnPrem-25.1
+    Project: Sunrise.Infrastructure.Auditing.Azure-25.1
+    Project: POH.Infrastucture.DataAccess.Server-25.1
+    Project: POH.Infrastructure.DataAccess.Repository-25.1
+    Project: Sunrise.Infrastructure.Auditing-25.1
+    Project: POH.Infrastructure.Security.Azure-25.1
+    Project: POH-BS-BizSvc-Common-25.1
+    Project: POH-BS-BizSvc-Common.Fhir-25.1
+    Project: POH-BS-Infra.Middleware-25.1
+    Project: POH-BS-Infra.Paging-25.1
+    Project: ux-plhlt-shm-npm-release-2.x
+    Project: POH-UX-DischargeInstructionsShellWebClient-27.1
+    Project: ux-plhlt-infrastructure-npm-release-2.2.x
+    Project: POH.Infrastructure.Messaging-25.2
+    Project: POH-BackgroundService-Common-25.2
+    Project: POH-BackgroundService-AppInsights-25.2
+    Project: POH-CoreServices-WebAPI-Common-25.2
+    Project: POH-DAL-Generator-25.2
+    Project: POH.Infrastructure.Security.Common-25.2
+    Project: POH.Infrastructure.DataAccess.Common-25.2
+    Project: POH.Infrastructure.Security.Interface-25.2
+    Project: POH.Infrastructure.Security.OnPrem-25.2
+    Project: POH.Infrastructure.Security.DataAccess-25.2
+    Project: POH.Infrastructure.DataAccess.Repository-25.2
+    Project: POH.TriggerBackgroundService.Common-25.2
+    Project: POH-Infrastructure-Configuration-25.2
+    Project: POH.Infrastucture.DataAccess.Server-25.2
+    Project: POH-Infrastructure-Common-25.2
+    Project: POH-Infrastructure-HealthChecks-25.2
+    Project: POH.Infrastructure.Security.Azure-25.2
+    Project: Sunrise.Infrastructure.Auditing.Azure-25.2
+    Project: Sunrise.Infrastructure.Auditing-25.2
+    Project: POH-BS-AIManager-25.1
+    Project: POH-BS-ApiDocumentation-25.1
+    Project: POH-BS-MedicationDispense-25.1
+    Project: POH-BS-Observation-25.1
+    Project: POH-BS-PatientPortal-25.1
+    Project: POH-BS-Coverage-25.1
+    Project: POH-BS-AIManager-25.2
+    Project: POH-BS-DSI-25.2
+    Project: POH-BS-SHM-25.2
+    Project: POH-BS-MedicationStatement-25.2
+    Project: POH-BS-AllergyIntolerance-25.2
+    Project: POH-BS-BulkRequest-WorkerService-25.2
+    Project: POH-BS-Medication-25.2
+    Project: POH-BS-CarePlan-25.2
+    Project: POH-BS-MedicationRequest-25.2
+    Project: POH-BS-ROI-25.2
+    Project: SunHm-HIMReportConfigWeb-25.2
+    Project: SunHm-HIMReportWebAPI-25.2
+    Project: POH-BS-Location-25.2
+    Project: SunHm-HIMROIWeb-25.2
+    Project: POH-BS-CancerStaging-25.2
+    Project: POH-BS-Tasking-25.2
+    Project: POH-BS-CareTeam-25.2
+    Project: POH-BS-UserManagement-25.2
+    Project: POH-BS-BulkRequest-25.2
+    Project: POH-BS-EnterpriseConfig-25.2
+    Project: POH-BS-Procedure-25.2
+    Project: POH-BS-DocumentManipulation-25.2
+    Project: POH-BS-Encounter-25.2
+    Project: POH-BS-PractitionerRole-25.2
+    Project: POH-BS-RelatedPerson-25.2
+    Project: POH-BS-PatientPortalBackgroundService-25.2
+    Project: POH-BS-Organization-25.2
+    Project: POH-BS-PatientPortal-25.2
+    Project: POH.Infrastructure.Messaging-25.1
+    Project: POH-BS-Immunization-25.2
+    Project: POH-BS-Practitioner-25.2
+    Project: POH-BS-Common-25.2
+    Project: POH-BS-BizSvc-Common-25.2
+    Project: POH-BS-UserPreference-25.2
+    Project: POH-BS-MedicationAdministration-25.2
+    Project: POH-BS-Goal-25.2
+    Project: POH-BS-Condition-25.2
+    Project: POH-BS-Infra.PublicDataObjects-25.2
+    Project: POH-BS-BizSvc-Common.Fhir-25.2
+    Project: POH-BS-Infra.Middleware-25.2
+    Project: POH-BS-Device-25.2
+    Project: POH-BS-FhirInfrastructure-25.2
+    Project: POH-BS-Infra.Paging-25.2
+    Project: POH-BS-CarePathBillingBackgroundService-25.2
+    Project: POH-BS-Infra.Publisher-25.2
+    Project: POH-BS-DiagnosticReport-25.2
+    Project: POH-BS-Group-25.2
+    Project: POH-BS-DocumentReference-25.2
+    Project: POH-BS-UnitTestUntilities-Nuget-25.2
+    Project: POH-BS-Binary-25.2
+    Project: POH-BS-Questionnaire-25.1
+    Project: POH-UX-POHWebClient-25.2
+    Project: POH-UX-PatientTrackingWebClient-25.2
+    Project: POH-UX-DSIWebClient-25.2
+    Project: POH-UX-ConfigToolsWebClient-25.2
+    Project: POH-BS-PatientPortal-ConfigLoader-25.2
+    Project: POH-BS-DocumentReference-25.1
+    Project: UniversalFax-Fax.Inbound.Service-25.2
+    Project: UniversalFax-Fax.Out.WebClient-25.2
+    Project: POH-UX-ScheduleWebClient-27.1
+    Project: POH-UX-BcmaWebClient-27.1
+    Project: POH-BS-CoreDM-25.2
+    Project: POH-BS-HealthManager-25.2
+    Project: POH-BS-PatientPortalQueueBackgroundService-25.2
+    Project: POH-BS-PatientTracking-25.2
+    Project: POH-BS-PatientPortalCCDABackgroundService-25.2
+    Project: POH-BS-Schedule-25.2
+    Project: POH-BS-AmbyAcronymExpansion-25.2
+    Project: POH-BS-Superbill-25.2
+    Project: POH-BS-ClientLogger-25.2
+    Project: POH-BS-OrderInfrastructure-25.2
+    Project: POH-BS-UserMessage-25.2
+    Project: POH-BS-ApiDocumentation-25.2
+    Project: UniversalFax-Fax.Outbound.Service-25.2
+    Project: SunHm-HIMReportPrintService-25.2
+    Project: SunHm-HIMReportDataSync-25.2
+    Project: SunHm-HIMWebClient-25.2
+    Project: UniversalFax-Fax.Config.WebClient-25.2
+    Project: POH-BS-Observation-25.2
+    Project: UniversalFax-Fax.APIs-25.2
+    Project: SunHm-HIMReportTransmission-25.2
+    Project: POH-UX-ScheduleWebClient-25.2
+    Project: POH-UX-DischargeInstructionsShellWebClient-25.2
+    Project: SunHm-HIMReportWeb-25.2
+    Project: SunHm-HIMDeficiencyWebAPI-25.2
+    Project: POH-BS-EICRImmunizationTriggerBackgroundService-25.2
+    Project: SunHm-HIMROIService-25.2
+    Project: POH-UX-BcmaWebClient-25.2
+    Project: POH-UX-ConfigToolsWebClient-25.3
+    Project: POH-UX-ConfigToolsWebClient-27.1
+    Project: ux-plhlt-portaladmin-config-npm-release-2.x
+    Project: POH-BS-PatientPortalAdmin-25.3
+    Project: POH-BS-AIManager-25.3
+    Project: POH-UX-DSIWebClient-27.1
+    Project: POH-UX-PatientTrackingWebClient-27.1
+    Project: POH-UX-SuperbillWebClient-27.1
+    Project: POH-UX-SuperbillWebClient-25.2
+    Project: POH-UX-POHPatientPortalWebClient-27.1
+    Project: ux-plhlt-dsi-config-npm-22.5
+    Project: POH-BS-PatientPortalAdmin-27.1
+    Project: ux-plhlt-portaladmin-config-npm-release-25.2
+    Project: SunHm-HIMROIService-25.3
+    Project: SunHm-HIMROIWeb-25.3
+    Project: POH.Infrastructure.Messaging-25.3
+    Project: ux-plhlt-infrastructure-npm-release-3.x
+    Project: POH-BS-PatientTracking-27.1
+    Project: POH-BS-CoreDM-25.3
+    Project: POH-BS-Schedule-25.3
+    Project: POH-BS-DSI-25.3
+    Project: POH-BS-Superbill-25.3
+    Project: POH-BS-ServiceRequest-25.3
+    Project: POH-BS-AllergyIntolerance-25.3
+    Project: POH-BS-MedicationStatement-25.3
+    Project: POH-BS-SHM-25.3
+    Project: POH-BS-MedicationDispense-25.3
+    Project: POH-BS-ApiDocumentation-25.3
+    Project: POH-BS-CarePlan-25.3
+    Project: POH-BS-ROI-25.3
+    Project: POH-BS-BulkRequest-WorkerService-25.3
+    Project: POH-BS-Observation-25.3
+    Project: POH-BS-Location-25.3
+    Project: POH-BS-HealthManager-25.3
+    Project: POH-BS-CancerStaging-25.3
+    Project: POH-BS-Tasking-25.3
+    Project: POH-BS-Coverage-25.3
+    Project: POH-BS-CareTeam-25.3
+    Project: POH-BS-UserManagement-25.3
+    Project: POH-BS-BulkRequest-25.3
+    Project: POH-BS-EnterpriseConfig-25.3
+    Project: POH-BS-Encounter-25.3
+    Project: POH-BS-RelatedPerson-25.3
+    Project: POH-BS-PractitionerRole-25.3
+    Project: POH-BS-PatientPortalBackgroundService-25.3
+    Project: POH-BS-Practitioner-25.3
+    Project: POH-BS-PatientTracking-25.3
+    Project: POH-BS-Questionnaire-25.3
+    Project: POH-BS-Organization-25.3
+    Project: POH-BS-Patient-25.3
+    Project: POH-BS-Immunization-25.3
+    Project: POH-BS-Goal-25.3
+    Project: POH-BS-Condition-25.3
+    Project: POH-BS-UserPreference-25.3
+    Project: POH-BS-UserMessage-25.3
+    Project: POH-BS-Device-25.3
+    Project: POH-BS-EICRImmunizationTriggerBackgroundService-25.3
+    Project: POH-BS-CarePathBillingBackgroundService-25.3
+    Project: POH-BS-PatientPortalCCDABackgroundService-25.3
+    Project: POH-BS-PatientPortalQueueBackgroundService-25.3
+    Project: POH-BS-OrderInfrastructure-25.3
+    Project: POH-BS-Group-25.3
+    Project: POH-BS-ClientLogger-25.3
+    Project: POH-BS-LockManagement-25.3
+    Project: POH-BS-MedicationAdministration-25.3
+    Project: POH-BS-LockManagement-27.1
+    Project: POH-BS-Patient-27.1
+    Project: SunHm-HIMSHRMigrationService-25.3
+Product: Prenatal
+    Project: 22.2
+    Project: 23.1
+    Project: 22.2.1
+    Project: 24.1
+    Project: 22.2.2
+Product: sandbox
+    Project: dimpoc
+Product: STAR
+    Project: Passport 2022.1.1
+    Project: dbcopy
+    Project: PassportPDQ
+    Project: PassportUI
+    Project: installbook
+    Project: passportinterface
+    Project: messagebroker
+    Project: PassportUtils
+    Project: java
+    Project: PassportConfigurator
+    Project: PassportFhirClient
+    Project: STAR Navigator 29
+Product: Sunrise-Main
+    Project: AccessManager
+    Project: EntSched
+    Project: EmergDept
+    Project: Core
+    Project: AM-EDI
+    Project: Clindoc
+    Project: SunriseScanning
+    Project: Ambulatory
+    Project: ChargeCapture
+    Project: HIM
+    Project: Inventory
+    Project: ISS
+    Project: Iss_QueryTool
+    Project: OpsMon
+    Project: PASInt
+    Project: Pharmacy
+    Project: Portal
+    Project: Radiology
+    Project: SFM-EDI
+    Project: SIP
+    Project: Surgery
+    Project: WebAPI
+    Project: Workload
+    Project: Platform
+    Project: MobilityServices
+    Project: MobilityApp
+    Project: SFM
+    Project: eLink
+    Project: SDRM_Opal
+    Project: Sunrise_Radiology_Legacy22.1PR
+    Project: Pharmacy22.1PR
+    Project: SFM22.1PR
+    Project: Platform22.1PR
+    Project: Core22.1PR
+    Project: SunriseScanning22.1PR
+    Project: Clindoc22.1PR
+    Project: EmergDept22.1PR
+    Project: Iss_QueryTool22.1PR
+    Project: Radiology22.1PR
+    Project: SFM-EDI22.1PR
+    Project: SIP22.1PR
+    Project: Surgery22.1PR
+    Project: WebAPI22.1PR
+    Project: Workload22.1PR
+    Project: Inventory22.1PR
+    Project: AccessManager22.1PR
+    Project: AM-EDI22.1PR
+    Project: Ambulatory22.1PR
+    Project: ChargeCapture22.1PR
+    Project: EntSched22.1PR
+    Project: HIM22.1PR
+    Project: ISS22.1PR
+    Project: MobilityServices22.1PR
+    Project: PASInt22.1PR
+    Project: OpsMon22.1PR
+    Project: Portal22.1PR
+    Project: Entities22.1PR
+    Project: DiseaseMgr22.1PR
+    Project: MobilityServices22.2PR
+    Project: EmergDept25.1PR
+    Project: EntSched25.1PR
+    Project: Ambulatory25.1PR
+    Project: ChargeCapture25.1PR
+    Project: HIM25.1PR
+    Project: Inventory25.1PR
+    Project: ISS25.1PR
+    Project: Iss_QueryTool25.1PR
+    Project: Pharmacy25.1PR
+    Project: Radiology25.1PR
+    Project: Core25.1PR
+    Project: Surgery25.1PR
+    Project: WebAPI25.1PR
+    Project: AccessManager25.1PR
+    Project: Platform25.1PR
+    Project: MobilityServices25.1PR
+    Project: SFM25.1PR
+    Project: Workload25.1PR
+    Project: Clindoc25.1PR
+    Project: SunriseScanning25.1PR
+Product: TouchWorks
+    Project: TouchWorksTFVC-Main
+    Project: TW-IntegratedScan
+    Project: TW-ObjectStorage
+    Project: TouchWorks-25.3
+    Project: TouchWorks-AngularJS
+    Project: TouchWorks-SCRUM
+    Project: TouchWorks-Infrared
+    Project: TW-IC-FHIRDataExtractor
+Product: TouchWorks-API
+    Project: TW-Note-AI-API-MainBranch-Scan
+Product: TouchWorks-Note+
+    Project: Note-AI-MainBranch-Scan
+Product: TWMobile
+    Project: Main
+    Project: Main - 21.3
+    Project: Main - 24.1
+    Project: Main - 24.2
+    Project: Main - 25.1
+    Project: Main - 25.2
+    Project: Main - 25.4
+    Project: Main - 26.1
+Product: VentusContractManagement
+    Project: VentusContractManagement - 2021.1.GA
+    Project: VentusContractManagement - 2025.1
