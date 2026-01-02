@@ -31,14 +31,14 @@ $today = Get-Date
 $fileDate = $today.ToString("MM-dd-yyyy")
 if ($mac) {
     $baseDir = "/Users/$env:USER/powershell/"
-    $outputCsv = "$($baseDir)CheckmarxScanStats.csv"
-    $excelPath = "$($baseDir)CheckmarxScanStats for $($fileDate).xlsx"
+    $outputCsv = "$($baseDir)Checkmarx_SAST.csv"
+    $excelPath = "$($baseDir)Checkmarx_SAST for $($fileDate).xlsx"
     $pwPath = "$($baseDir)APIKey.chm"
 }
 else {
     $baseDir = "C:\powershell\"
-    $outputCsv = "$($baseDir)CheckmarxScanStats.csv"
-    $excelPath = "$($baseDir)CheckmarxScanStats for $($fileDate).xlsx"
+    $outputCsv = "$($baseDir)Checkmarx_SAST.csv"
+    $excelPath = "$($baseDir)Checkmarx for $($fileDate).xlsx"
     $pwPath = "$($baseDir)APIKey.chm"
 }
 Write-Host $pwPath
