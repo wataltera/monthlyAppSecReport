@@ -1,0 +1,21 @@
+CopilotAntRpaid7
+
+44072742-9bb0-46b3-b5a4-212d643154c1
+
+b042b83a-2df9-4139-af53-5eafb729ce34
+
+curl -H "X-Api-Key: 44072742-9bb0-46b3-b5a4-212d643154c1" https://ca.api.insight.rapid7.com/ias/v1/apps/46fc23d3-a2bc-462e-8453-c1c6a000decc
+
+curl -H "X-Api-Key: 44072742-9bb0-46b3-b5a4-212d643154c1" https://ca.api.insight.rapid7.com/ias/v1/scan-results/baae3192-17d6-4d3d-ab67-d95c25257e36
+
+curl -H "X-Api-Key: 44072742-9bb0-46b3-b5a4-212d643154c1" https://ca.api.insight.rapid7.com:443/ias/v1/scans/baae3192-17d6-4d3d-ab67-d95c25257e36
+
+
+Case
+10085458  10085522
+
+I have view and change.  Should suffice to run the API, but does not.  AppSec Admin.
+
+Andy Martin, Mark Nordberg, Keith Anderson  Platform admins.
+
+using https://ca.api.insight.rapid7.com/ias/v1/tags instead?
