@@ -1,5 +1,7 @@
 CopilotAndChecmarx
 
+To get entire list of Checkmarx scans,  & .\CheckMarxScanDetails.ps1 from monthly report folder.
+
 ProjectName, Owner, Team, #Scans, RecentScanDateTime  Each has a ScanList
 For each scan, ScanStartDateTime, ScanComplete, LinesOfCode, Initiator, Type (SAST, SCA, DAST)  Each has a scan summary.  
 For each summary StartDateTime, TotalScanTime can be N/A if didn't complete. Critical, High, Medium, Lines of Code, File count,  ScanID

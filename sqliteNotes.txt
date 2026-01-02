@@ -1,5 +1,9 @@
 sqliteNotes.txt
 
+To get a SQLite prompt on the database:
+
+C:\sqlite\sqlite3.exe monthlyReport.db
+
 To start the web site from C:\Users\W988276\AppData\Local\monthlyReportDatabase\FlaskUI:
 python app.py
 
@@ -17,7 +21,7 @@ cd C:\Users\W988276\AppData\Local\monthlyReportDatabase
 sqlite3 'C:\Users\W988276\AppData\Local\monthlyReportDatabase\monthlyReport.db' ".schema Artifacts"
 sqlite3 '.\monthlyReport.db' ".schema Artifacts"
 # Or more detailed
-sqlite3 '.\monthlyReport.db' "PRAGMA table_info(Artifacts);"
+C:\sqlite\sqlite3 '.\monthlyReport.db' "PRAGMA table_info(Artifacts);"
 
 
 $env:PATH = "C:\sqlite;$env:PATH"
@@ -43,9 +47,3 @@ $dbPath = C:\Users\W988276\AppData\Local\monthlyReportDatabase\myapp.db
 Rapid 7 : Team (BU tag) : Name : Last Scan Date : Lines of Code : Critical : High : Medium
 
 Mend : Application : Project : Type (Want dependencies)  : Start Time (Want Status Finished) : Duration : Critical : High : Medium
-
-Checkmarx 
-
-ProjectName, Owner, Team, #Scans, RecentScanDateTime  Each has a ScanList
-For each scan, ScanStartDateTime, ScanComplete, LinesOfCode, Initiator, Type (SAST, SCA, DAST)  Each has a scan summary.  
-For each summary StartDateTime, TotalScanTime can be N/A if didn't complete. Critical, High, Medium, Lines of Coe, Fie count,  ScanID
